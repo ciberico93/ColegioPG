@@ -1,0 +1,44 @@
+git --version : para saber que version de git tenemos
+
+git config --global user.name "JoseIberico"
+git config --global user.email "josesito.x_x@hotmail.com"
+
+Vamos al directorio y escribimos:
+git init : Esto creara un archivo git
+
+git status : sirve para ver que contiene nuestro directorio y su estado.
+
+git add . : Esto seleccionara todos los archivos en ese directorio, tambien en vez de punto
+podriamos seleccionar un archivo pero tendria que ser entre "index.html"
+
+git commit -m "nombre" : Esto permite agregar todos nuestros archivos y darle un nombre de guardado
+
+git log : sirve para verificar nuestro historial de commits
+
+//DATAZO en caso quieras regresar a un commit anterior aplicar el siguiente codigo
+git checkout (codigocommit)
+
+//Al nosotros usar el checkout estaremos creando una rama automaticamente y esta rama por defecto 
+sera HEAD si queremos regresar a nuestra rama principal tenemos que usar el comando:
+git switch master
+
+//Si quiero crear una nueva rama tengo que usar:
+git switch -c "nombre"
+
+//Para visualizar mis ramas se escribe:
+git branch
+
+//Subir agregar nuestro proyecto a github
+git remote add origin (direccion de nuestro github)
+
+//Enviar nuestro proyecto a github en la rama master
+git push origin master
+
+//limpiar consola
+cls
+
+//clonar repositorio / descargar repositorio
+git clone (url)
+
+//actualiza lo del repositorio desde la rama master
+git pull origin master
