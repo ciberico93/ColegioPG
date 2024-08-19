@@ -6,10 +6,10 @@
 
         Task<IEnumerable<T>>GetAll();
 
-        //Task<T> Create (T entity);
+        Task<T> Create(T entity);
 
-        //Task<T> Update (T entity);  
+        Task<T> Update(T entity);
 
-        //Task<T> Delete (int id);
+        Task<bool> Delete(int id);
     }
 }

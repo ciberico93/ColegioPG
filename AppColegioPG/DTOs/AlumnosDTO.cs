@@ -1,12 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
-
-namespace AppColegioPG.Models
+﻿namespace AppColegioPG.DTOs
 {
-    public class Alumnos
+    public class AlumnosDTO
     {
-        [Key]
         public int Id { get; set; }
         public string Nombre { get; set; }
 
@@ -16,10 +11,9 @@ namespace AppColegioPG.Models
 
         public string Telefono { get; set; }
         public string Correo { get; set; }
-
         public int Id_Cursos { get; set; }
-        
-        [ForeignKey("Id_Cursos")]
-        public virtual Cursos? NavegacionCursos { get; set; }
+        public string NombreCurso { get; set; }
+
+
     }
 }

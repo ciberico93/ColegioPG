@@ -2,6 +2,7 @@ using AppColegioPG.Context;
 using AppColegioPG.Models;
 using AppColegioPG.Services;
 using AppColegioPG.Services.IServices;
+using AppColegioPG.Utilidades;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,6 +29,20 @@ builder.Services.AddDbContext<ColegioPGDbContext>(options =>
 
 builder.Services.AddScoped<IMetodos<Cursos>, CursosServices>();
 
+builder.Services.AddScoped<IMetodos<Alumnos>, AlumnosServices>();
+
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
+builder.Services.AddCors(option =>
+{
+    option.AddPolicy("NuevaPolitica",app =>
+    {
+            app.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 
 var app = builder.Build();
 
@@ -43,5 +58,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors("NuevaPolitica");
 
 app.Run();
